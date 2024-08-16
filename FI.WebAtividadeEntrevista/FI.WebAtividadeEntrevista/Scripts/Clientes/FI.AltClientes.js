@@ -70,3 +70,4 @@ function ModalDialog(titulo, texto) {
     $('body').append(texto);
     $('#' + random).modal('show');
 }
+

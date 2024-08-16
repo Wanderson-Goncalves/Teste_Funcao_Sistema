@@ -194,6 +194,16 @@
     <Content Include="Scripts\Clientes\FI.Clientes.js" />
     <Content Include="Scripts\Clientes\FI.ListClientes.js" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\Clientes\FI.MaskCPF.js" />
+    <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="Scripts\inputmask\colormask.css" />
+    <Content Include="Scripts\inputmask\colormask.js" />
+    <Content Include="Scripts\inputmask\colormask.min.js" />
+    <Content Include="Scripts\inputmask\inputmask.es6.js" />
+    <Content Include="Scripts\inputmask\inputmask.js" />
+    <Content Include="Scripts\inputmask\inputmask.min.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.min.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />

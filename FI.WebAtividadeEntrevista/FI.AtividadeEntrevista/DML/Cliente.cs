@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,13 @@ namespace FI.AtividadeEntrevista.DML
         /// <summary>
         /// Telefone
         /// </summary>
-        public string Telefone { get; set; }        
+        public string Telefone { get; set; }
+
+        /// <summary>
+        /// Telefone
+        /// </summary>
+        [Required]
+        public string CPF { get; set; }
+
     }    
 }
