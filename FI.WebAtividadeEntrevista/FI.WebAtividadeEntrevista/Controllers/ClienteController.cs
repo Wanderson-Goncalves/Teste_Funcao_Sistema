@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FI.AtividadeEntrevista.DML;
+using FI.WebAtividadeEntrevista.Validation;
 
 namespace WebAtividadeEntrevista.Controllers
 {
@@ -25,6 +26,7 @@ namespace WebAtividadeEntrevista.Controllers
         [HttpPost]
         public JsonResult Incluir(ClienteModel model)
         {
+            
             BoCliente bo = new BoCliente();
             
             if (!this.ModelState.IsValid)
@@ -38,6 +40,11 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
+                if(!ValidaCPF.validarCPF(model.CPF) == false)
+                {
+                    Response.StatusCode = 400;
+                    return Json("CPF inválido");
+                }
                 
                 model.Id = bo.Incluir(new Cliente()
                 {                    
@@ -49,7 +56,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = model.Nacionalidade,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone
+                    Telefone = model.Telefone,
+                    CPF = model.CPF
                 });
 
            
@@ -73,6 +81,12 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
+                if (!ValidaCPF.validarCPF(model.CPF) == false)
+                {
+                    Response.StatusCode = 400;
+                    return Json("CPF inválido");
+                }
+
                 bo.Alterar(new Cliente()
                 {
                     Id = model.Id,
@@ -84,7 +98,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = model.Nacionalidade,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone
+                    Telefone = model.Telefone,
+                    CPF = model.CPF
                 });
                                
                 return Json("Cadastro alterado com sucesso");
@@ -111,7 +126,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = cliente.Nacionalidade,
                     Nome = cliente.Nome,
                     Sobrenome = cliente.Sobrenome,
-                    Telefone = cliente.Telefone
+                    Telefone = cliente.Telefone,
+                    CPF = model.CPF
                 };
 
             
